@@ -72,7 +72,10 @@ This repository follows a specific structure for organizing audio data:
 - **Audio Folder**: All audio files should be stored in a designated folder.
 - **Subfolders**: Within the audio folder, there should be subfolders named after the dialects of the audio data.
 - **Speaker Subfolders**: Inside each class subfolder, create subfolders for the individual speakers from whom the audios are collected.
-- **Audios per Speaker**: Each speaker subfolder should contain ...
+- **Audios per Speaker**: Each speaker subfolder should contain three audio files named consistently:
+  -- standard speech
+  -- dialectal speech
+  -- speech for testing
 
 ```
 Audio_Folder
