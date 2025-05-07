@@ -1,6 +1,15 @@
 # DIAL-CON – _DIAlect Level CONtinuum analyzer_
 
-...
+This repository provides a pipeline for dialect classification using deep learning on raw audio files.  
+The pipeline is designed to:
+
+1. Train a model to distinguish between **standard** and **dialectal** speech across multiple speakers.
+2. Fine-tune the model on a **specific speaker** to personalize the classification.
+3. During inference, evaluate incoming speech segments (e.g., every few seconds or milliseconds) to determine **how dialectal** the speaker is speaking, on a continuous scale relative to their own speech patterns.
+
+The system leverages a pretrained Google model to extract audio embeddings from fixed-length segments, which are then classified using a lightweight Convolutional Neural Network (CNN).
+
+![VertClas](https://github.com/user-attachments/assets/9855c515-833c-4fb0-829b-49bea0db4671)
 
 ### Key Features
 - Easily Adjustable Parameters: The main parameters are easily customizable, allowing for repeated use of the pipeline and facilitating experimentation.
@@ -72,10 +81,10 @@ This repository follows a specific structure for organizing audio data:
 - **Audio Folder**: All audio files should be stored in a designated folder.
 - **Subfolders**: Within the audio folder, there should be subfolders named after the dialects of the audio data.
 - **Speaker Subfolders**: Inside each class subfolder, create subfolders for the individual speakers from whom the audios are collected.
-- **Audios per Speaker**: Each speaker subfolder should contain three audio files named consistently:
-  -- standard speech
-  -- dialectal speech
-  -- speech for testing
+- **Audios per Speaker**: Each speaker subfolder must contain exactly three audio files, named consistently:
+  - the speaker's version of standard (non-dialectal) speech
+  - the speaker's version in their native dialect
+  - a sample used for testing or evaluation
 
 ```
 Audio_Folder
@@ -113,13 +122,7 @@ For preprocessing the audio data accordingly, refer to the 'Preprocessing' noteb
 
 ## Usage Instructions
 
-In this section, you'll find detailed instructions on how to effectively utilize the main file of this repository. Follow these steps to get started with the provided functionality.
-
-In the following grphic, you can see an image of the entire pipeline. It is divided into its individual steps. The gray dashed blocks each represent a notebook. Under these blocks, you will find the name of the notebook and the most important parameters, which can be adjusted in the `_00_Pipeline.ipynb` file.   
-
-...  
-
-All other parameters that can be adjusted are also listed in the `_00_Pipeline.ipynb` file. Once all parameters are correctly filled in, the `_00_Pipeline.ipynb` notebook can be executed.
+All parameters that can be adjusted are listed and described in the `_00_Pipeline.ipynb` file. Once all parameters are correctly filled in, the `_00_Pipeline.ipynb` notebook can be executed.
 
 Additionally, the most important functions in the individual notebooks are described with their parameters in the notebooks itself, even if these do not need to be changed for execution.
 
