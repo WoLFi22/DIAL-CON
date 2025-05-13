@@ -9,7 +9,7 @@ The pipeline is designed to:
 
 The system leverages a pretrained Google model to extract audio embeddings from fixed-length segments, which are then classified using a lightweight Convolutional Neural Network (CNN).
 
-![VertClas](https://github.com/user-attachments/assets/9855c515-833c-4fb0-829b-49bea0db4671)
+![VertClas](https://github.com/user-attachments/assets/76389431-21e2-4735-a4c3-d2bab87d57bb)
 
 ### Key Features
 - Easily Adjustable Parameters: The main parameters are easily customizable, allowing for repeated use of the pipeline and facilitating experimentation.
